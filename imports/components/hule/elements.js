@@ -30,7 +30,7 @@ class HuleCtrl {
   setChecked(element) {
     Elements.update(element._id, {
       $set: {
-        checked: !task.checked
+        checked: !element.checked
       }
     })
   }

@@ -1,3 +1,10 @@
+<style>
+  .checked {
+    color: grey;
+    list-style: bullet;
+  }
+</style>
+
 <header>
   <h1>Hule: Elements</h1>
 
@@ -7,7 +14,7 @@
 </header>
 
 <ul>
-  <li ng-repeat="element in $ctrl.elements">
+  <li ng-repeat="element in $ctrl.elements" ng-class="{'checked': element.checked}">
     <button class="delete" ng-click="$ctrl.removeElement(element)">&times;</button>
 
     <input type="checkbox" ng-checked="element.checked" ng-click="$ctrl.setChecked(element)" class="toggle-checked"/>
