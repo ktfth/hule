@@ -9,7 +9,11 @@ class HuleCtrl {
 
     this.helpers({
       elements() {
-        return Elements.find({});
+        return Elements.find({}, {
+          sort: {
+            createdAt: -1
+          }
+        });
       }
     });
   }
