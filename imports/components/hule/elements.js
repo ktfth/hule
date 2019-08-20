@@ -13,6 +13,15 @@ class HuleCtrl {
       }
     });
   }
+
+  addElement(newElement) {
+    Elements.insert({
+      name: newElement,
+      createdAt: new Date()
+    })
+
+    this.newElement = '';
+  }
 }
 
 export default angular.module('huleElements', [

@@ -1,5 +1,9 @@
 <header>
-  <h2>Hule: Elements</h2>
+  <h1>Hule: Elements</h1>
+
+  <form class="new-element" ng-submit="$ctrl.addElement($ctrl.newElement)">
+    <input ng-model="$ctrl.newElement" type="text" name="name" placeholder="Add up a new element">
+  </form>
 </header>
 
 <ul>
