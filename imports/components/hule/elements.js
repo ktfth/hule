@@ -1,15 +1,17 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import template from './elements.html';
+import { Elements } from '../../api/elements.js';
 
 class HuleCtrl {
-  constructor() {
-    this.elements = [
-      {name: 'air'},
-      {name: 'earth'},
-      {name: 'fire'},
-      {name: 'water'},
-    ];
+  constructor($scope) {
+    $scope.viewModel(this);
+
+    this.helpers({
+      elements() {
+        return Elements.find({});
+      }
+    });
   }
 }
 
@@ -17,5 +19,5 @@ export default angular.module('huleElements', [
   angularMeteor
 ]).component('huleElementsComp', {
   templateUrl: 'imports/components/hule/elements.html',
-  controller: HuleCtrl
+  controller: ['$scope', HuleCtrl]
 });
