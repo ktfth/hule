@@ -26,6 +26,18 @@ class HuleCtrl {
 
     this.newElement = '';
   }
+
+  setChecked(element) {
+    Elements.update(element._id, {
+      $set: {
+        checked: !task.checked
+      }
+    })
+  }
+
+  removeElement(element) {
+    Elements.remove(element._id)
+  }
 }
 
 export default angular.module('huleElements', [
